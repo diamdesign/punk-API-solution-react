@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { LandingPage } from "./pages/LadingPage";
 import { IRoute } from "./components/interfaces";
+import { Routes, Route } from "react-router-dom";
 
 export function App() {
 	const links: IRoute[] = [
@@ -19,7 +20,10 @@ export function App() {
 	return (
 		<>
 			<Header links={links} />
-			<LandingPage />
+			<Routes>
+				<Route path="/" element={<LandingPage />}></Route>
+				<Route path="/search" element={<div>Hello create</div>}></Route>
+			</Routes>
 		</>
 	);
 }
